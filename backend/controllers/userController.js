@@ -49,9 +49,7 @@ const registerUser = async (req,res) => {
         if(!validator.isEmail(email)){
             return res.status(400).json({message: "Please enter a valid email"})
         }
-        if(!validator.isStrongPassword(password)){
-            return res.status(400).json({message: "Please enter a strong password"})
-        }
+        
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt)
 
@@ -75,4 +73,8 @@ const getUser = async (req,res) => {
         res.status(502).json({message: error.message})
     }
 }
+
+
+
+
 export {loginUser, registerUser, getUser}

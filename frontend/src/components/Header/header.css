@@ -1,3 +1,39 @@
-.header{
-    height: 7vh;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #627aae;
+    padding: 10px 20px;
+}
+
+.logo {
+    flex: 1; /* Take up remaining space */
+    text-align: center;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 5px 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }

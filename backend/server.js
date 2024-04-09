@@ -4,6 +4,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 
 import userRouter from "./routes/userRoute.js"
+import adminRouter from "./routes/adminroutes.js"
 import taskRouter from "./routes/taskRoute.js"
 import forgotPasswordRouter from "./routes/forgotPassword.js"
 
@@ -29,9 +30,11 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 
 //api endpoints
+
 app.use("/api/user", userRouter)
 app.use("/api/task", taskRouter)
 app.use("/api/forgotPassword", forgotPasswordRouter)
+app.use("/api/admin", adminRouter)
 
 //listen
 app.listen(port, () => console.log(`Listening on localhost:${port}`))

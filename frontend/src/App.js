@@ -16,6 +16,8 @@ import Register from './components/Register';
 import ForgotPassword from './components/forgotPassword/ForgotPassword';
 import ResetPassword from './components/forgotPassword/ResetPassword';
 import axios from './Axios/axios.js';
+import LogoPage from './components/logopage';
+import AdminPanel from './components/AdminPanel.jsx';
 function App() {
   const token = JSON.parse(localStorage.getItem("authToken"));
   const [tasks, dispatch] = useReducer(taskReducer, [])
@@ -75,6 +77,8 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/resetPassword" element={<ResetPassword />} />
+              <Route path="/logo" element={<LogoPage />} />
+              <Route path="/admin" element={<AdminPanel/>} />
             </Route>
           </Routes>
         </TaskContext.Provider>
