@@ -5,7 +5,7 @@ const GetAllTasks = () => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/admin/getAllTasks')
+        axios.get('https://todoapp-kyts.onrender.com/api/admin/getAllTasks')
             .then((response) => {
                 setTasks(response.data.data);
             })

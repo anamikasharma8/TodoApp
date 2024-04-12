@@ -5,7 +5,7 @@ const GetAllUsers = () => {
     const [allUsers, setAllUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/admin/getAllUsers').then((response) => setAllUsers(response.data.data));
+        axios.get('https://todoapp-kyts.onrender.com/api/admin/getAllUsers').then((response) => setAllUsers(response.data.data));
     }, []);
 
     return (
