@@ -5,7 +5,9 @@ const GetAllUsers = () => {
     const [allUsers, setAllUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('https://todoapp-kyts.onrender.com/api/admin/getAllUsers').then((response) => setAllUsers(response.data.data));
+        axios.get('https://todoapp-kyts.onrender.com/api/admin/getAllUsers')
+            .then((response) => setAllUsers(response.data.data))
+            .catch((error) => console.error('Error fetching users:', error));
     }, []);
 
     return (
