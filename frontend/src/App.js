@@ -68,7 +68,7 @@ function App() {
         <TaskContext.Provider value={{ tasks, dispatch }}>
           <Routes>
             <Route path="/" element={<Header />}>
-              <Route path='/' element={token ? <Layout /> : <Login />}>
+              <Route path='/' element={token ? <Layout /> : <LogoPage />}>
                 <Route index element={<AllTask />} />
                 <Route path="active" element={<Active />} />
                 <Route path="completed" element={<Completed />} />
