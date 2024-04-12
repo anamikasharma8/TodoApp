@@ -3,12 +3,20 @@ import axios from 'axios';
 
 const GetAllUsers = () => {
     const [allUsers, setAllUsers] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         axios.get('https://todoapp-kyts.onrender.com/api/admin/getAllUsers')
             .then((response) => setAllUsers(response.data.data))
-            .catch((error) => console.error('Error fetching users:', error));
+            .catch((error) => {
+                console.error('Error fetching users:', error);
+                setError(error.message || 'An error occurred while fetching users.');
+            });
     }, []);
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <div className='mx-20'>
